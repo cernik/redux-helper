@@ -4,13 +4,6 @@ export function getFilters(types) {
   return {
     [types.APPEND_SUCCESS]: (state, action) => {
       if (action.payload.data) {
-        let nextData = {};
-        if (Array.isArray(action.payload.data)) {
-          nextData = action.payload.data;
-        } else {
-          nextData = [action.payload.data];
-        }
-
         const nextData = listOrObjToMap(action.payload.data);
         return {
           ...state,
@@ -22,9 +15,6 @@ export function getFilters(types) {
       }
       return state;
     },
-    [types.APPEND_FAIL]: state => ({
-      ...state,
-    }),
     default: state => state,
   };
 }

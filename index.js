@@ -1,4 +1,4 @@
-export { context } from './src/context';
+export { context, actions, actionTypes } from './src/context';
 
 export { createActionTypes, mapActionsToTypes } from './src/actions';
 export { createAsyncAction } from './src/createAsyncAction';

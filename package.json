@@ -1,6 +1,6 @@
 {
   "name": "redux-helper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "author": {
     "name": "ateqai"
@@ -10,16 +10,19 @@
   },
   "bundleDependencies": false,
   "dependencies": {
+    "@react-native-community/async-storage": "^1.4.2",
     "axios": "^0.18.0",
+    "immutable": "^4.0.0-rc.12",
     "mag-service-registry": "^3.0.5",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.4",
     "redux-axios-middleware": "^4.0.0",
+    "redux-batched-actions": "^0.4.1",
     "redux-logger": "^3.0.6",
+    "redux-loop-symbol-ponyfill": "^2.2.2",
     "redux-persist": "^5.10.0",
-    "to-constant-case": "^1.0.0",
-    "@react-native-community/async-storage": "^1.4.2"
+    "to-constant-case": "^1.0.0"
   },
   "deprecated": false,
   "description": "Redux helper",

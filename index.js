@@ -19,4 +19,8 @@ export {
   withLogger,
 } from './src/middleware';
 
-export { configureStore, configureStoreWithPersistStore } from './src/store';
+export {
+  configureStore,
+  configureStoreWithPersistStore,
+  configureStoreWithImmutable,
+} from './src/store';

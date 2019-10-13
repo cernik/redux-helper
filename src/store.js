@@ -1,12 +1,7 @@
 import { Map, fromJS } from 'immutable';
-import {
-  install as reduxLoopInstall,
-  loop,
-  combineReducers,
-} from 'redux-loop-symbol-ponyfill';
-
+import * as reduxLoop from 'redux-loop-symbol-ponyfill';
 import { enableBatching } from 'redux-batched-actions';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from '@react-native-community/async-storage';
 
@@ -67,15 +62,12 @@ const configureReducer = (r = reducer) => (state, action) => {
   /* eslint-enable */
 
   // enforce the state is immutable
-  return loop(fromJS(nextState), effects);
+  return reduxLoop.loop(fromJS(nextState), effects);
 };
 
-export const configureStoreWithImmutable = (
-  reducers = {},
-  middlewares = []
-) => {
-  const rootReducer = enableBatching(
-    combineReducers(
+const createImmutableReducer = reducers =>
+  enableBatching(
+    reduxLoop.combineReducers(
       reducers,
       immutableStateContainer,
       getImmutable,
@@ -83,10 +75,15 @@ export const configureStoreWithImmutable = (
     )
   );
 
+export const configureStoreWithImmutable = (
+  reducers = {},
+  middlewares = []
+) => {
   const store = createStore(
-    configureReducer(rootReducer),
-    composeEnhancers(applyMiddleware(...middlewares), reduxLoopInstall)
+    createImmutableReducer(reducers),
+    composeEnhancers(applyMiddleware(...middlewares), reduxLoop.install())
   );
+
   return {
     store,
   };

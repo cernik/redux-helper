@@ -1,4 +1,6 @@
-export { connect, Provider } from 'react-redux';
+import { connect, Provider } from 'react-redux';
+
+export { connect, Provider };
 export { context, actions, actionTypes } from './src/context';
 
 export { createActionTypes, mapActionsToTypes } from './src/actions';

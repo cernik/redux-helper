@@ -22,8 +22,8 @@ export const withDelete = createReducer(getDeleteFilters);
 export const withAppend = createReducer(getAppendFilters);
 
 export const defaultInitialState = {
-  data: [],
-  dataNormalized: {},
+  data: {},
+  list: [],
   isFetching: false,
   errorMessage: '',
 };

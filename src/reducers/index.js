@@ -1,4 +1,5 @@
 import { getFilters as getLoadFilters } from './withLoad';
+import { getFilters as getRefreshFilters } from './withRefresh';
 import { getFilters as getCreateFilters } from './withCreate';
 import { getFilters as getUpdateFilters } from './withUpdate';
 import { getFilters as getDeleteFilters } from './withDelete';
@@ -16,6 +17,7 @@ function createReducer(getFiltersFn) {
 }
 
 export const withLoad = createReducer(getLoadFilters);
+export const withRefresh = createReducer(getRefershFilters);
 export const withCreate = createReducer(getCreateFilters);
 export const withUpdate = createReducer(getUpdateFilters);
 export const withDelete = createReducer(getDeleteFilters);

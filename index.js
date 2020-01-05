@@ -9,6 +9,7 @@ export { createAsyncAction } from './src/createAsyncAction';
 export {
   configureReducer,
   withLoad,
+  withRefresh,
   withCreate,
   withUpdate,
   withDelete,

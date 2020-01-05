@@ -17,7 +17,7 @@ function createReducer(getFiltersFn) {
 }
 
 export const withLoad = createReducer(getLoadFilters);
-export const withRefresh = createReducer(getRefershFilters);
+export const withRefresh = createReducer(getRefreshFilters);
 export const withCreate = createReducer(getCreateFilters);
 export const withUpdate = createReducer(getUpdateFilters);
 export const withDelete = createReducer(getDeleteFilters);
